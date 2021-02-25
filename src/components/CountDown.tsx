@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from 'react';
-import { isRegExp } from 'util';
 import styles from '../styles/components/CountDown.module.css';
 
 let countdownTimeOut: NodeJS.Timeout;
