@@ -27,6 +27,7 @@ function App() {
           <ChallengeBox />
         </div>
       </section>
+      
     </div>
   );
 }

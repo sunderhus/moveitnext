@@ -48,3 +48,26 @@ a{
 }
 
 
+header{
+    text-align: center;
+    color: var(--text);
+    padding: 2rem;
+    font-weight: bold;
+}
+
+
+header a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.2s linear;
+}
+header:hover a{
+    color:var(--blue-twitter);
+}
+header a img{
+    margin-left: 1rem;
+}
+
+
+
