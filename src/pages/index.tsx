@@ -1,9 +1,9 @@
 
 import Head from 'next/head';
-import ChallengeBox from '../components/ChallengeBox';
+import {ChallengeBox} from '../components/ChallengeBox';
 import { CompletedChallanges } from '../components/CompletedChallanges';
 import { CountDown } from '../components/CountDown';
-import ExperienceBar from '../components/ExperienceBar';
+import {ExperienceBar} from '../components/ExperienceBar';
 import { Profile } from '../components/Profile';
 import styles from '../styles/pages/Home.module.css';
 

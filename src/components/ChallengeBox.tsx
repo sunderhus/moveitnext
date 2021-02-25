@@ -1,6 +1,6 @@
 import styles from '../styles/components/ChallengeBox.module.css';
 
-const ChallengeBox: React.FC = () => {
+export function ChallengeBox(){
     const hasActiveChallenge = true;
 
     return (
@@ -44,6 +44,3 @@ const ChallengeBox: React.FC = () => {
         </div>
     );
 }
-
-
-export default ChallengeBox;

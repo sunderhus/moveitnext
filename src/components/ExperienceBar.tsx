@@ -1,6 +1,6 @@
 import styles from '../styles/Components/ExperienceBar.module.css';
 
-const ExperienceBar: React.FC = () => {
+export function ExperienceBar(){
     return (
         <header className={styles.experienceBar}>
             <span> 0 xp</span>
@@ -14,5 +14,3 @@ const ExperienceBar: React.FC = () => {
         </header>
     );
 }
-
-export default ExperienceBar;
