@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { ChallengeProvider } from "../hooks/challenge";
+import { CountdownProvider } from "../hooks/countdown";
 
 interface IAppProviderProps {
     children: ReactNode
@@ -8,7 +9,9 @@ interface IAppProviderProps {
 export function AppProvider({ children }: IAppProviderProps) {
     return (
         <ChallengeProvider>
-            {children}
+            <CountdownProvider>
+                {children}
+            </CountdownProvider>
         </ChallengeProvider>
     );
 }

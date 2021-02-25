@@ -1,33 +1,49 @@
+import { useCallback } from 'react';
 import { useChallenge } from '../hooks/challenge';
+import { useCountdown } from '../hooks/countdown';
 import styles from '../styles/components/ChallengeBox.module.css';
 
-export function ChallengeBox(){
-    const hasActiveChallenge = true;
-    const {upLevel}= useChallenge();
+export function ChallengeBox() {
+    const { activeChallenge, resetChallenge, completeChallenge } = useChallenge();
+    const { resetCountdown,startCountdown } = useCountdown();
+
+    const handleChallengeSucceeded = useCallback(() => {
+        completeChallenge();
+        resetCountdown();
+
+    }, [completeChallenge,resetCountdown]);
+
+    const handleChallengeFailed = useCallback(() => {
+        resetChallenge();
+        resetCountdown();
+    }, [resetChallenge,resetCountdown]);
+
+
 
     return (
         <div className={styles.container}>
             {
-                hasActiveChallenge ? (
+                activeChallenge ? (
                     <div className={styles.challengeActive}>
-                        <header> Ganhe 400 xp</header>
+                        <header> Ganhe {activeChallenge.amount} xp</header>
                         <main>
-                            <img src="icons/body.svg" alt="desafio"/>
+                            <img src={`icons/${activeChallenge.type}.svg`} alt="desafio" />
                             <strong>Novo desafio</strong>
-                            <p>levante e caminhe 3 minutos</p>
+                            <p>{activeChallenge.description}</p>
                         </main>
 
                         <footer>
-                            <button 
+                            <button
                                 type="button"
                                 className={styles.challengeFailedButton}
+                                onClick={handleChallengeFailed}
                             >
                                 Falhei
                             </button>
-                            <button 
+                            <button
                                 type="button"
                                 className={styles.challengeSucceededdButton}
-                                onClick={upLevel}
+                                onClick={handleChallengeSucceeded}
                             >
                                 Completei
                             </button>
