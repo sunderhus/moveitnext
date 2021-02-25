@@ -33,14 +33,14 @@ export function CountdownProvider({ children }: IChallengeProps) {
     
     const startCountdown = useCallback(() => {
         setIsActive(true);
-    }, [setIsActive]);
+    }, []);
 
     const resetCountdown = useCallback(() => {
         clearTimeout(countdownTimeOut);
         setIsActive(false);
         setTime(0.05 * 60);
         setHasFinished(false);
-    }, [countdownTimeOut]);
+    }, []);
 
     useEffect(() => {
         if (isActive && time > 0) {
