@@ -1,7 +1,9 @@
+import { useChallenge } from '../hooks/challenge';
 import styles from '../styles/components/ChallengeBox.module.css';
 
 export function ChallengeBox(){
     const hasActiveChallenge = true;
+    const {upLevel}= useChallenge();
 
     return (
         <div className={styles.container}>
@@ -25,6 +27,7 @@ export function ChallengeBox(){
                             <button 
                                 type="button"
                                 className={styles.challengeSucceededdButton}
+                                onClick={upLevel}
                             >
                                 Completei
                             </button>
