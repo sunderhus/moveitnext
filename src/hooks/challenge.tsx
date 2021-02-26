@@ -11,7 +11,7 @@ import challenges from "../../challenges.json";
 import LevelUpModal from "../components/LevelUpModal";
 
 interface IChallenge {
-  type: "body" | "eye";
+  type: string;
   description: string;
   amount: number;
 }
@@ -88,11 +88,11 @@ export function ChallengeProvider({
     [level, isLevelUpModalOpen]
   );
 
-  const startNewChallenge = useCallback(async () => {
+  const startNewChallenge = useCallback(() => {
     const randomChallengeIndex = Math.floor(Math.random() * challenges.length);
     const challenge = challenges[randomChallengeIndex];
 
-    await new Audio("/notification.mp3").play();
+    new Audio("/notification.mp3").play();
 
     if (Notification.permission === "granted") {
       new Notification("Novo desafio 🔥", {
@@ -103,7 +103,7 @@ export function ChallengeProvider({
       });
     }
 
-    setActiveChallenge(challenge as IChallenge);
+    setActiveChallenge(challenge);
   }, []);
 
   const resetChallenge = useCallback(() => {
