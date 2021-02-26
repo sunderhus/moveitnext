@@ -60,14 +60,14 @@ export function ChallengeProvider({
     setExperienceToNetLevel(Math.pow((level + 1) * 4, 2));
   }, [level]);
 
-  useEffect(() => {
-    async function requestNotifyPermitions(): Promise<void> {
-      if ("Notification" in window) {
-        await Notification.requestPermission();
-      }
-    }
-    requestNotifyPermitions();
-  }, []);
+  // useEffect(() => {
+  //   async function requestNotifyPermitions(): Promise<void> {
+  //     if ("Notification" in window) {
+  //       await Notification.requestPermission();
+  //     }
+  //   }
+  //   requestNotifyPermitions();
+  // }, []);
 
   useEffect(() => {
     Cookies.set("level", String(level));
@@ -94,14 +94,14 @@ export function ChallengeProvider({
 
     new Audio("/notification.mp3").play();
 
-    if ("Notification" in window && Notification.permission === "granted") {
-      new Notification("Novo desafio 🔥", {
-        body: `Valendo ${challenge.amount}xp!`,
-        badge: `icons/${challenge.type}.svg`,
-        icon: `icons/${challenge.type}.svg`,
-        image: `icons/${challenge.type}.svg`,
-      });
-    }
+    // if ("Notification" in window && Notification.permission === "granted") {
+    //   new Notification("Novo desafio 🔥", {
+    //     body: `Valendo ${challenge.amount}xp!`,
+    //     badge: `icons/${challenge.type}.svg`,
+    //     icon: `icons/${challenge.type}.svg`,
+    //     image: `icons/${challenge.type}.svg`,
+    //   });
+    // }
 
     setActiveChallenge(challenge);
   }, []);
