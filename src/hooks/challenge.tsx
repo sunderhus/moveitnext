@@ -71,7 +71,7 @@ export function ChallengeProvider({
         }
     }, [level, isLevelUpModalOpen]);
 
-    async function startNewChallenge () {
+    async function startNewChallenge() {
         const randomChallengeIndex = Math.floor(Math.random() * challenges.length);
         const challenge = challenges[randomChallengeIndex];
 

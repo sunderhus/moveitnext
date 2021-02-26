@@ -3,15 +3,23 @@
     max-width: 972px;
     margin: 0 auto;
 
-    padding: 2.5rem 2rem;
+    padding: 0.5rem 1rem 3rem;
     display: flex;
     flex-direction: column;
 }
 
 .container section{
     flex:1;
+    
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(400px,auto));
+    grid-template-columns: 1fr 1fr;
     gap: 6.25rem;
     align-content: center;
+}
+
+@media(max-width:768px){
+   
+    .container section{
+        grid-template-columns: 1fr;
+    }
 }
