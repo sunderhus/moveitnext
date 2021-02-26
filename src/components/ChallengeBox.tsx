@@ -3,7 +3,7 @@ import { useChallenge } from "../hooks/challenge";
 import { useCountdown } from "../hooks/countdown";
 import styles from "../styles/components/ChallengeBox.module.css";
 
-export function ChallengeBox(): JSX.Element {
+const ChallengeBox: React.FC = () => {
   const { activeChallenge, resetChallenge, completeChallenge } = useChallenge();
   const { resetCountdown } = useCountdown();
 
@@ -56,4 +56,6 @@ export function ChallengeBox(): JSX.Element {
       )}
     </div>
   );
-}
+};
+
+export default ChallengeBox;

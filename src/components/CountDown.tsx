@@ -1,7 +1,7 @@
 import { useCountdown } from "../hooks/countdown";
 import styles from "../styles/components/CountDown.module.css";
 
-export function CountDown(): JSX.Element {
+const CountDown: React.FC = () => {
   const {
     hasFinished,
     isActive,
@@ -56,4 +56,6 @@ export function CountDown(): JSX.Element {
       )}
     </div>
   );
-}
+};
+
+export default CountDown;

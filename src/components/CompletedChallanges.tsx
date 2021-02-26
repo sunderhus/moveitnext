@@ -1,7 +1,7 @@
 import { useChallenge } from "../hooks/challenge";
 import styles from "../styles/components/CompletedChallanges.module.css";
 
-export function CompletedChallanges(): JSX.Element {
+const CompletedChallanges: React.FC = () => {
   const { challengesCompleted } = useChallenge();
   return (
     <div className={styles.container}>
@@ -9,4 +9,5 @@ export function CompletedChallanges(): JSX.Element {
       <span>{challengesCompleted}</span>
     </div>
   );
-}
+};
+export default CompletedChallanges;

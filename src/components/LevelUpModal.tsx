@@ -1,7 +1,7 @@
 import { useChallenge } from "../hooks/challenge";
 import styles from "../styles/components/LevelUpModal.module.css";
 
-export function LevelUpModal(): JSX.Element {
+const LevelUpModal: React.FC = () => {
   const { level, closeLevelUpModal } = useChallenge();
 
   return (
@@ -16,4 +16,6 @@ export function LevelUpModal(): JSX.Element {
       </div>
     </div>
   );
-}
+};
+
+export default LevelUpModal;

@@ -8,7 +8,7 @@ import {
 } from "react";
 import Cookies from "js-cookie";
 import challenges from "../../challenges.json";
-import { LevelUpModal } from "../components/LevelUpModal";
+import LevelUpModal from "../components/LevelUpModal";
 
 interface IChallenge {
   type: "body" | "eye";

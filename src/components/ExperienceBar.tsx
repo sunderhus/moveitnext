@@ -1,7 +1,7 @@
 import { useChallenge } from "../hooks/challenge";
 import styles from "../styles/components/ExperienceBar.module.css";
 
-export function ExperienceBar(): JSX.Element {
+const ExperienceBar: React.FC = () => {
   const { currentExperience, experienceToNextLevel } = useChallenge();
 
   const percentToNextLevel =
@@ -24,4 +24,6 @@ export function ExperienceBar(): JSX.Element {
       <span>{experienceToNextLevel}xp</span>
     </header>
   );
-}
+};
+
+export default ExperienceBar;

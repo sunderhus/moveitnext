@@ -1,7 +1,7 @@
 import { useChallenge } from "../hooks/challenge";
 import styles from "../styles/components/Profile.module.css";
 
-export function Profile(): JSX.Element {
+const Profile: React.FC = () => {
   const { level } = useChallenge();
   return (
     <div className={styles.profileContainer}>
@@ -18,4 +18,5 @@ export function Profile(): JSX.Element {
       </div>
     </div>
   );
-}
+};
+export default Profile;
