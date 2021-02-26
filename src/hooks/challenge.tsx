@@ -50,7 +50,7 @@ export function ChallengeProvider({
   const [challengesCompleted, setChallengesCompleted] = useState(
     rest.challengesCompleted ?? 0
   );
-  const [activeChallenge, setActiveChallenge] = useState(null as IChallenge);
+  const [activeChallenge, setActiveChallenge] = useState(null);
   const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
   const [experienceToNextLevel, setExperienceToNetLevel] = useState(() => {
     return Math.pow((level + 1) * 4, 2);
@@ -126,7 +126,7 @@ export function ChallengeProvider({
     levelUp(finalLevel);
 
     setCurrentExperience(finalExperience);
-    setActiveChallenge(null as IChallenge);
+    setActiveChallenge(null);
     setChallengesCompleted(challengesCompleted + 1);
   }, [
     experienceToNextLevel,
