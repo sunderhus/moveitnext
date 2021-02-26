@@ -71,24 +71,24 @@ export function ChallengeProvider({
         }
     }, [level, isLevelUpModalOpen]);
 
-    const startNewChallenge = useCallback(async () => {
+    async function startNewChallenge () {
         const randomChallengeIndex = Math.floor(Math.random() * challenges.length);
         const challenge = challenges[randomChallengeIndex];
 
         await new Audio('/notification.mp3').play();
 
-        if ("Notification" in window && Notification.permission === 'granted') {
+        if (Notification.permission === 'granted') {
             new Notification('Novo desafio 🔥', {
                 body: `Valendo ${challenge.amount}xp!`,
-                badge: `icons/${challenge.type}.svg`,
-                icon: `icons/${challenge.type}.svg`,
-                image: `icons/${challenge.type}.svg`
+                badge: `/icons/${challenge.type}.svg`,
+                icon: `/icons/${challenge.type}.svg`,
+                image: `/icons/${challenge.type}.svg`
             });
         }
 
         setActiveChallenge(challenge as IChallenge);
 
-    }, [challenges])
+    }
 
     const resetChallenge = useCallback(() => {
         setActiveChallenge(null);

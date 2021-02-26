@@ -6,12 +6,12 @@ interface ICountdown {
 }
 
 interface ICountdownContext {
-    minutes:number;
-    seconds:number;
-    isActive:boolean;
-    hasFinished:boolean;
-    startCountdown:()=>void;
-    resetCountdown:()=>void;
+    minutes: number;
+    seconds: number;
+    isActive: boolean;
+    hasFinished: boolean;
+    startCountdown: () => void;
+    resetCountdown: () => void;
 }
 
 interface IChallengeProps {
@@ -22,15 +22,15 @@ let countdownTimeOut: NodeJS.Timeout;
 const CountdownContext = createContext<ICountdownContext>({} as ICountdownContext);
 
 export function CountdownProvider({ children }: IChallengeProps) {
-    const {startNewChallenge}= useChallenge();
+    const { startNewChallenge } = useChallenge();
     const [isActive, setIsActive] = useState(false);
     const [hasFinished, setHasFinished] = useState(false);
     const [time, setTime] = useState(0.05 * 60);
-    
+
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
-   
-    
+
+
     const startCountdown = useCallback(() => {
         setIsActive(true);
     }, []);
@@ -53,7 +53,7 @@ export function CountdownProvider({ children }: IChallengeProps) {
             startNewChallenge();
         }
     }, [isActive, time])
-    
+
     return (
         <CountdownContext.Provider
             value={{
