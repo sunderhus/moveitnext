@@ -94,12 +94,12 @@ export function ChallengeProvider({
 
     new Audio("/notification.mp3").play();
 
-    if (Notification.permission === "granted") {
+    if ("Notification" in window && Notification.permission === "granted") {
       new Notification("Novo desafio 🔥", {
         body: `Valendo ${challenge.amount}xp!`,
-        badge: `/icons/${challenge.type}.svg`,
-        icon: `/icons/${challenge.type}.svg`,
-        image: `/icons/${challenge.type}.svg`,
+        badge: `icons/${challenge.type}.svg`,
+        icon: `icons/${challenge.type}.svg`,
+        image: `icons/${challenge.type}.svg`,
       });
     }
 
