@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
-import { ChallengeProvider, IChallengeProps } from "./challenge";
-import { CountdownProvider } from "./countdown";
+import { ReactNode } from 'react';
+import { ChallengeProvider, IChallengeProps } from './challenge';
+import { CountdownProvider } from './countdown';
 
 interface IAppProviderProps extends IChallengeProps {
   children: ReactNode;

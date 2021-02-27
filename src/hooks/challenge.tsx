@@ -5,10 +5,10 @@ import {
   useContext,
   useEffect,
   useState,
-} from "react";
-import Cookies from "js-cookie";
-import challenges from "../../challenges.json";
-import LevelUpModal from "../components/LevelUpModal";
+} from 'react';
+import Cookies from 'js-cookie';
+import challenges from '../../challenges.json';
+import LevelUpModal from '../components/LevelUpModal';
 
 interface IChallenge {
   type: string;
@@ -36,7 +36,7 @@ export interface IChallengeProps {
 }
 
 const ChallengeContext = createContext<IChallengeContext>(
-  {} as IChallengeContext
+  {} as IChallengeContext,
 );
 
 export function ChallengeProvider({
@@ -45,10 +45,10 @@ export function ChallengeProvider({
 }: IChallengeProps): JSX.Element {
   const [level, setLevel] = useState(rest.level ?? 1);
   const [currentExperience, setCurrentExperience] = useState(
-    rest.currentExperience ?? 0
+    rest.currentExperience ?? 0,
   );
   const [challengesCompleted, setChallengesCompleted] = useState(
-    rest.challengesCompleted ?? 0
+    rest.challengesCompleted ?? 0,
   );
   const [activeChallenge, setActiveChallenge] = useState(null);
   const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
@@ -70,9 +70,9 @@ export function ChallengeProvider({
   // }, []);
 
   useEffect(() => {
-    Cookies.set("level", String(level));
-    Cookies.set("currentExperience", String(currentExperience));
-    Cookies.set("challengesCompleted", String(challengesCompleted));
+    Cookies.set('level', String(level));
+    Cookies.set('currentExperience', String(currentExperience));
+    Cookies.set('challengesCompleted', String(challengesCompleted));
   }, [level, currentExperience, challengesCompleted]);
 
   const levelUp = useCallback(
@@ -85,14 +85,14 @@ export function ChallengeProvider({
         }
       }
     },
-    [level, isLevelUpModalOpen]
+    [level, isLevelUpModalOpen],
   );
 
   const startNewChallenge = useCallback(() => {
     const randomChallengeIndex = Math.floor(Math.random() * challenges.length);
     const challenge = challenges[randomChallengeIndex];
 
-    new Audio("/notification.mp3").play();
+    new Audio('/notification.mp3').play();
 
     // if ("Notification" in window && Notification.permission === "granted") {
     //   new Notification("Novo desafio 🔥", {
@@ -164,7 +164,7 @@ export function ChallengeProvider({
 export function useChallenge(): IChallengeContext {
   const context = useContext(ChallengeContext);
   if (!context) {
-    throw Error("useChallenge must be within a ChallengeProvider");
+    throw Error('useChallenge must be within a ChallengeProvider');
   }
   return context;
 }

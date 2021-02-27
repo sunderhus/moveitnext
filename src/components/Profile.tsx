@@ -1,5 +1,5 @@
-import { useChallenge } from "../hooks/challenge";
-import styles from "../styles/components/Profile.module.css";
+import { useChallenge } from '../hooks/challenge';
+import styles from '../styles/components/Profile.module.css';
 
 const Profile: React.FC = () => {
   const { level } = useChallenge();

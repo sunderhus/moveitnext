@@ -1,12 +1,12 @@
-import Head from "next/head";
-import { GetServerSideProps } from "next";
-import ChallengeBox from "../components/ChallengeBox";
-import CompletedChallanges from "../components/CompletedChallanges";
-import CountDown from "../components/CountDown";
-import ExperienceBar from "../components/ExperienceBar";
-import Profile from "../components/Profile";
-import styles from "../styles/pages/Home.module.css";
-import { AppProvider } from "../hooks";
+import Head from 'next/head';
+import { GetServerSideProps } from 'next';
+import ChallengeBox from '../components/ChallengeBox';
+import CompletedChallanges from '../components/CompletedChallanges';
+import CountDown from '../components/CountDown';
+import ExperienceBar from '../components/ExperienceBar';
+import Profile from '../components/Profile';
+import styles from '../styles/pages/Home.module.css';
+import { AppProvider } from '../hooks';
 
 interface IHomeProps {
   level: number;
@@ -47,7 +47,7 @@ export default function App({
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async ctx => {
   const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
 
   return {

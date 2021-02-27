@@ -1,5 +1,5 @@
-import { useCountdown } from "../hooks/countdown";
-import styles from "../styles/components/CountDown.module.css";
+import { useCountdown } from '../hooks/countdown';
+import styles from '../styles/components/CountDown.module.css';
 
 const CountDown: React.FC = () => {
   const {
@@ -11,8 +11,8 @@ const CountDown: React.FC = () => {
     startCountdown,
   } = useCountdown();
 
-  const [minuteLeft, minuteRight] = String(minutes).padStart(2, "0").split("");
-  const [secondLeft, secondRight] = String(seconds).padStart(2, "0").split("");
+  const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
+  const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
 
   return (
     <div>

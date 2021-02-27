@@ -1,5 +1,5 @@
-import { useChallenge } from "../hooks/challenge";
-import styles from "../styles/components/CompletedChallanges.module.css";
+import { useChallenge } from '../hooks/challenge';
+import styles from '../styles/components/CompletedChallanges.module.css';
 
 const CompletedChallanges: React.FC = () => {
   const { challengesCompleted } = useChallenge();

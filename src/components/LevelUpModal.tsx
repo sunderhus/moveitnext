@@ -1,5 +1,5 @@
-import { useChallenge } from "../hooks/challenge";
-import styles from "../styles/components/LevelUpModal.module.css";
+import { useChallenge } from '../hooks/challenge';
+import styles from '../styles/components/LevelUpModal.module.css';
 
 const LevelUpModal: React.FC = () => {
   const { level, closeLevelUpModal } = useChallenge();

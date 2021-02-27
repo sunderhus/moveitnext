@@ -5,8 +5,8 @@ import {
   useContext,
   useEffect,
   useState,
-} from "react";
-import { useChallenge } from "./challenge";
+} from 'react';
+import { useChallenge } from './challenge';
 
 interface ICountdownContext {
   minutes: number;
@@ -23,7 +23,7 @@ interface IChallengeProps {
 let countdownTimeOut: NodeJS.Timeout;
 
 const CountdownContext = createContext<ICountdownContext>(
-  {} as ICountdownContext
+  {} as ICountdownContext,
 );
 
 export function CountdownProvider({ children }: IChallengeProps): JSX.Element {
@@ -77,7 +77,7 @@ export function CountdownProvider({ children }: IChallengeProps): JSX.Element {
 export function useCountdown(): ICountdownContext {
   const context = useContext(CountdownContext);
   if (!context) {
-    throw Error("useCountdown must be within a CountdownProvider");
+    throw Error('useCountdown must be within a CountdownProvider');
   }
   return context;
 }

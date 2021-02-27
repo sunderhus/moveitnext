@@ -1,7 +1,7 @@
-import { useCallback } from "react";
-import { useChallenge } from "../hooks/challenge";
-import { useCountdown } from "../hooks/countdown";
-import styles from "../styles/components/ChallengeBox.module.css";
+import { useCallback } from 'react';
+import { useChallenge } from '../hooks/challenge';
+import { useCountdown } from '../hooks/countdown';
+import styles from '../styles/components/ChallengeBox.module.css';
 
 const ChallengeBox: React.FC = () => {
   const { activeChallenge, resetChallenge, completeChallenge } = useChallenge();

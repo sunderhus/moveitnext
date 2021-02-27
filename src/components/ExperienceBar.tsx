@@ -1,5 +1,5 @@
-import { useChallenge } from "../hooks/challenge";
-import styles from "../styles/components/ExperienceBar.module.css";
+import { useChallenge } from '../hooks/challenge';
+import styles from '../styles/components/ExperienceBar.module.css';
 
 const ExperienceBar: React.FC = () => {
   const { currentExperience, experienceToNextLevel } = useChallenge();

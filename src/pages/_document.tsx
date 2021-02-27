@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document {
   render(): JSX.Element {
@@ -20,7 +20,7 @@ export default class MyDocument extends Document {
               rel="noopener noreferrer"
               href="https://www.linkedin.com/in/matheus-sunderhus/"
             >
-              Matheus Sunderhus{" "}
+              Matheus Sunderhus{' '}
               <img src="/icons/linkedin.svg" alt="linkedin logo" />
             </a>
           </header>
